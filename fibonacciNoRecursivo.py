@@ -1,11 +1,12 @@
 import sys
+from typing import List
 
 
 #len(l) = n + 1
 #l es una secuencia de numeros de fibonacci
 #l[len(l)-1] = res
 def fibonacciNoRecursivo(n: int) -> int:
-  l : list = []
+  l : List[int] = []
   for i in range(n+1):
     if i == 0:
       l.append(0)
