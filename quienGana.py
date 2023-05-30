@@ -27,11 +27,11 @@ def quienGana(j1: str, j2: str) -> str :
 
 
 
-# PPT = ["Piedra", "Papel", "Tijera"]
-
-# for j in PPT:
-#   for k in PPT:
-#     print(f"Jugador 1 = {j} \nJugador 2 = {k} \nResultado = {quienGana(j,k)}\n")
+# def test():
+#   PPT = ["Piedra", "Papel", "Tijera"]
+#   for j in PPT:
+#     for k in PPT:
+#       print(f"Jugador 1 = {j} \nJugador 2 = {k} \nResultado = {quienGana(j,k)}\n")
 
 
 

@@ -5,15 +5,21 @@ import sys
 #l es una secuencia de numeros de fibonacci
 #l[len(l)-1] = res
 def fibonacciNoRecursivo(n: int) -> int:
-  l : list = [0,1]
-  for i in range(2, n+1):
-    l.append(l[i-1]+l[i-2])
+  l : list = []
+  for i in range(n+1):
+    if i == 0:
+      l.append(0)
+    if i == 1:
+      l.append(1)
+    if i > 1:
+      l.append(l[i-1]+l[i-2])
   return l[len(l)-1]
 
-# for i in range(6):
-#   print(i)
-#   print(fibonacciNoRecursivo(i))
-#   print()
+# def test():
+#   K = []
+#   for i in range(10):
+#     K.append((i, fibonacciNoRecursivo(i)))
+#   print(K)
 
 if __name__ == '__main__':
   x = int(input())

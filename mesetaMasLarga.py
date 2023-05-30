@@ -5,14 +5,13 @@ from typing import List
 # Respetar esta sintaxis, ya que el CMS dirá que no pasó ningún test si usan otra notación.
 
 def mesetaMasLarga(l: List[int]) -> int :
-  n : int = 1
+  n : int = 0
   m : int = 0
-  for i in range(0, len(l)-1):
-    if l[i] == l[i+1]:
+  for i in range(0, len(l)):
+    if l[i-1] == l[i]:
       n += 1
-      if i == len(l)-2 and n > m:
+      if i == len(l)-1 and n > m:
         m = n
-        print("termino")
     else:
       if n > m:
         m = n
@@ -20,6 +19,22 @@ def mesetaMasLarga(l: List[int]) -> int :
   return m
 
 
-if __name__ == '__main__':
-  x = input()
-  print(mesetaMasLarga([int(j) for j in x.split()]))
+# def test():
+#   vacia = []
+#   UnElemento1 = [1]
+#   DosElementos1 = [1,2]
+#   DosElementos2 = [2,2]
+#   MesetaAlFinal = [1,2,3,4,5,5,5]
+#   MesetaAlPrincipio = [1,1,1,2,3,4,5]
+#   MesetaAlMedio = [1,2,3,3,3,4,5]
+#   DosMesetas = [1,2,3,3,3,3,4,5,5,5,5,6]
+
+#   Listas = [vacia, UnElemento1, DosElementos1, DosElementos2, MesetaAlFinal, MesetaAlPrincipio, MesetaAlMedio, DosMesetas]
+
+#   for lt in Listas:
+#     print(lt, mesetaMasLarga(lt))
+
+
+# if __name__ == '__main__':
+#   x = input()
+#   print(mesetaMasLarga([int(j) for j in x.split()]))
