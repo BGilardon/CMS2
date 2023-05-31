@@ -40,29 +40,28 @@ def sePuedeLlegar(origen: str, destino: str, vuelos: List[Tuple[str, str]]) -> i
 
   return res
 
-def test():
-  vuelos1 = [('A','B'), ('E','F'), ('F', 'C'), ('B', 'A'), ('C','D'), ('D','E')]
-  vuelosVacios = []
-  VuelosBucle = [('A','B'), ('B', 'C'), ('C', 'D'), ('D','A')]
+# def test():
+#   vuelos1 = [('A','B'), ('E','F'), ('F', 'C'), ('B', 'A'), ('C','D'), ('D','E')]
+#   vuelosVacios = []
+#   VuelosBucle = [('A','B'), ('B', 'C'), ('C', 'D'), ('D','A')]
   
-  test1 = sePuedeLlegar('C', 'B', vuelos1)
-  print(test1)
+#   test1 = sePuedeLlegar('C', 'B', vuelos1)
+#   print(test1)
   
-  test2 = sePuedeLlegar('C', 'F', vuelos1)
-  print(test2)
+#   test2 = sePuedeLlegar('C', 'F', vuelos1)
+#   print(test2)
 
-  test3 = sePuedeLlegar('A', 'B', vuelosVacios)
-  print(test3)
+#   test3 = sePuedeLlegar('A', 'B', vuelosVacios)
+#   print(test3)
 
-  test4 = sePuedeLlegar('A', 'F', VuelosBucle)
-  print(test4)
-
-test()
+#   test4 = sePuedeLlegar('A', 'F', VuelosBucle)
+#   print(test4)
 
 
-# if __name__ == '__main__':
-#   origen = input()
-#   destino = input()
-#   vuelos = input()
+
+if __name__ == '__main__':
+  origen = input()
+  destino = input()
+  vuelos = input()
   
-#   print(sePuedeLlegar(origen, destino, [tuple(vuelo.split(',')) for vuelo in vuelos.split()]))
+  print(sePuedeLlegar(origen, destino, [tuple(vuelo.split(',')) for vuelo in vuelos.split()]))
