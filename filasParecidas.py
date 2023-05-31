@@ -18,20 +18,18 @@ def filasParecidas(matriz: List[List[int]]) -> bool :
 
 
 
-def test():
-  m1 = [[1]]  #Si es [x] no es una seq<seq<Z>> es una seq<Z>
-  m2 = [[1,2,3]]
-  m2ymedio = [[1,2,3],[4,5,6]]
-  m3 = [[1],[2],[4]]
-  m4 = [[1,2,3],[4,5,6],[7,8,9]]
-  m5 = [[1,2,3],[4,5,6],[7,9,9]]
-  matrices = [m1,m2,m2ymedio,m3,m4,m5]
-  for m in matrices:
-    print(m)
-    print(filasParecidas(m))
-    print()
-
-
+# def test():
+#   m1 = [[1]]  #Si es [x] no es una seq<seq<Z>> es una seq<Z>
+#   m2 = [[1,2,3]]
+#   m2ymedio = [[1,2,3],[4,5,6]]
+#   m3 = [[1],[2],[4]]
+#   m4 = [[1,2,3],[4,5,6],[7,8,9]]
+#   m5 = [[1,2,3],[4,5,6],[7,9,9]]
+#   matrices = [m1,m2,m2ymedio,m3,m4,m5]
+#   for m in matrices:
+#     print(m)
+#     print(filasParecidas(m))
+#     print()
 
 if __name__ == '__main__':
   filas = int(input())

@@ -7,44 +7,62 @@ from typing import Tuple
 # Respetar esta sintaxis, ya que el CMS dirá que no pasó ningún test si usan otra notación.
 
 def sePuedeLlegar(origen: str, destino: str, vuelos: List[Tuple[str, str]]) -> int :
-  res = 0
+  res : int = 0
   salida : str = origen
   fin : bool = False
-  vuelo : Tuple[str, str] = ('X', origen)
+  vuelo : Tuple[str, str] = ()
+  if len(vuelos) == 0:
+    fin = True
+    res = -1
+  
   while(not fin):
     nuevoVuelo : bool = False
     
     for i in range(len(vuelos)):
       if vuelos[i][0] == salida:
-        vuelo : Tuple[str, str] = vuelos[i]
+        vuelo = vuelos[i]
         nuevoVuelo = True
     
-    if vuelo[1] == destino:
+    res += 1 #Otro vuelo => +1
+
+    if vuelo[1] == destino: #Llegue a destino => Fin
       fin = True
     
-    salida = vuelo[1]
+    salida = vuelo[1] #Mi nueva salida es el destino anterior
 
-    res += 1
-
-    if not nuevoVuelo:
+    if vuelo[1] == origen: #Si volvi al principio no hay camino
       res = -1
       fin = True
     
-    salida = vuelo[1]
+    if not nuevoVuelo: #Si llegue a un punto final, no hay camino
+      res = -1
+      fin = True
 
   return res
 
-# def test():
-#   vuelos1 = [('A','B'), ('E','F'), ('B', 'A'), ('C','D'), ('D','E')]
-#   test1 = sePuedeLlegar('C', 'B', vuelos1)
-#   print(test1)
-#   test2 = sePuedeLlegar('C', 'F', vuelos1)
-#   print(test2)
-
-
-if __name__ == '__main__':
-  origen = input()
-  destino = input()
-  vuelos = input()
+def test():
+  vuelos1 = [('A','B'), ('E','F'), ('F', 'C'), ('B', 'A'), ('C','D'), ('D','E')]
+  vuelosVacios = []
+  VuelosBucle = [('A','B'), ('B', 'C'), ('C', 'D'), ('D','A')]
   
-  print(sePuedeLlegar(origen, destino, [tuple(vuelo.split(',')) for vuelo in vuelos.split()]))
+  test1 = sePuedeLlegar('C', 'B', vuelos1)
+  print(test1)
+  
+  test2 = sePuedeLlegar('C', 'F', vuelos1)
+  print(test2)
+
+  test3 = sePuedeLlegar('A', 'B', vuelosVacios)
+  print(test3)
+
+  test4 = sePuedeLlegar('A', 'F', VuelosBucle)
+  print(test4)
+
+test()
+
+
+# if __name__ == '__main__':
+#   origen = input()
+#   destino = input()
+#   vuelos = input()
+  
+#   print(sePuedeLlegar(origen, destino, [tuple(vuelo.split(',')) for vuelo in vuelos.split()]))
