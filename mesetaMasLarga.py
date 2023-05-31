@@ -35,6 +35,6 @@ def mesetaMasLarga(l: List[int]) -> int :
 #     print(lt, mesetaMasLarga(lt))
 
 
-# if __name__ == '__main__':
-#   x = input()
-#   print(mesetaMasLarga([int(j) for j in x.split()]))
+if __name__ == '__main__':
+  x = input()
+  print(mesetaMasLarga([int(j) for j in x.split()]))
