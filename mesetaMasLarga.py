@@ -4,19 +4,19 @@ from typing import List
 # l: List[int]  <--Este es un ejemplo para una lista de enteros.
 # Respetar esta sintaxis, ya que el CMS dirá que no pasó ningún test si usan otra notación.
 
-def mesetaMasLarga(l: List[int]) -> int :
-  n : int = 0
-  m : int = 0
-  for i in range(0, len(l)):
-    if l[i-1] == l[i]:
-      n += 1
-      if i == len(l)-1 and n > m:
-        m = n
-    else:
-      if n > m:
-        m = n
-      n = 1
-  return m
+def mesetaMasLarga(l: List[int]) -> int:
+    current_length: int = 0
+    max_length: int = 0
+    for i in range(0, len(l)):
+        if l[i-1] == l[i]:
+            current_length += 1
+            if i == len(l)-1 and current_length > max_length:
+                max_length = current_length
+        else:
+            if current_length > max_length:
+                max_length = current_length
+            current_length = 1
+    return max_length
 
 
 # def test():
